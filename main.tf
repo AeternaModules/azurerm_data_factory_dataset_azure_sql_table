@@ -13,7 +13,7 @@ resource "azurerm_data_factory_dataset_azure_sql_table" "data_factory_dataset_az
   table                 = each.value.table
 
   dynamic "schema_column" {
-    for_each = each.value.schema_column != null ? [each.value.schema_column] : []
+    for_each = each.value.schema_column != null ? each.value.schema_column : []
     content {
       description = schema_column.value.description
       name        = schema_column.value.name

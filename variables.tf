@@ -30,11 +30,11 @@ EOT
     parameters            = optional(map(string))
     schema                = optional(string)
     table                 = optional(string)
-    schema_column = optional(object({
+    schema_column = optional(list(object({
       description = optional(string)
       name        = string
       type        = optional(string)
-    }))
+    })))
   }))
 }
 
